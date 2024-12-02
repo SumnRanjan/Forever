@@ -12,11 +12,15 @@ import Cart from "./pages/Cart.jsx"
 import Login from './pages/Login.jsx'
 import PlaceOrder from './pages/PlaceOrder.jsx'
 import Orders from './pages/Orders.jsx'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
+
     path: "/",
     element: <Layout />,
+
     children: [
       {
         index: true,
@@ -37,6 +41,7 @@ const router = createBrowserRouter([
       {
         path: "product/:productId",
         element: <Product />,
+
       },
       {
         path: "cart",
@@ -61,5 +66,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <ShopContextProvider>
     <RouterProvider router={router} />
+      <ToastContainer />
   </ShopContextProvider>
 );
